@@ -23,6 +23,10 @@ sum(is.na(df_replace$replace_mean_math))
 sum(is.na(df_replace$replace_mean_reading))
 sum(is.na(df_replace$replace_mean_writing))
 
+ggplot(aes(df_replace$replace_mean_math)) + geom_histogram(aes(factor=df$gender)
+ggplot(aes(df_replace$replace_mean_reading)) + geom_histogram(aes(factor=df$gender)
+ggplot(aes(df_replace$replace_mean_writing)) + geom_histogram(aes(factor=df$gender)
+
 df <- select(df_replace,-'math.score',-'reading.score',-'writing.score')
 sample <- sample.split(df$replace_mean_math, SplitRatio = 0.70)
 train = subset (df, sample == TRUE)
